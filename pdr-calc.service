@@ -1,0 +1,14 @@
+[Unit]
+Description=PDR Calculator Gunicorn Service
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=путь_к_файлам
+ExecStart=/usr/local/bin/gunicorn --config путь_к_gunicorn.conf.py wsgi:app
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
