@@ -157,11 +157,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayResults(data) {
         let html = '';
 
-        // Add header for print/PDF with more formal style
+        // Add header for print/PDF
         html += `
             <div class="print-header" style="display: none;">
-                <h2 style="margin-bottom: 10px; font-size: 14pt;">Отчёт о расчёте беременности</h2>
-                <p style="font-size: 10pt; color: #333; margin-bottom: 15px;">Дата формирования: ${new Date().toLocaleDateString('ru-RU')}</p>
+                <h2 style="color: #2e7d32; margin-bottom: 15px; font-size: 18px;">Результаты расчёта</h2>
+                <p style="font-size: 13px; color: #666; margin-bottom: 15px;">Дата расчёта: ${new Date().toLocaleDateString('ru-RU')}</p>
             </div>
         `;
 
