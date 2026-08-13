@@ -124,8 +124,26 @@ create_directories() {
 install_application() {
     log_info "Установка приложения в ${INSTALL_DIR}..."
     
-    # Копирование файлов приложения
-    cp -r /workspace/* ${INSTALL_DIR}/
+    # Определение директории со скриптом
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    
+    # Проверка наличия исходных файлов
+    if [ ! -f "${SCRIPT_DIR}/app.py" ] && [ ! -f "${SCRIPT_DIR}/main.py" ]; then
+        log_error "Файлы приложения не найдены в ${SCRIPT_DIR}. Убедитесь, что запускаете скрипт из корня проекта."
+        exit 1
+    fi
+    
+    # Копирование файлов приложения с использованием rsync для надежности
+    log_info "Копирование файлов приложения..."
+    if command -v rsync &> /dev/null; then
+        rsync -av --exclude='venv' --exclude='__pycache__' --exclude='*.log' --exclude='.git' "${SCRIPT_DIR}/" "${INSTALL_DIR}/"
+    else
+        # Fallback на cp, если rsync нет
+        mkdir -p "${INSTALL_DIR}"
+        cp -rT "${SCRIPT_DIR}" "${INSTALL_DIR}"
+        # Очистка лишних директорий после копирования
+        rm -rf "${INSTALL_DIR}/venv" "${INSTALL_DIR}/__pycache__" "${INSTALL_DIR}/.git"
+    fi
     
     # Создание виртуального окружения
     log_info "Создание виртуального окружения Python..."
