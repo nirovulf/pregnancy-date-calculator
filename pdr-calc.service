@@ -10,6 +10,10 @@ User=www-data
 Group=www-data
 WorkingDirectory=/opt/pdr
 Environment="PATH=/opt/pdr/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Environment="AUTO_UPDATE=true"
+Environment="GIT_BRANCH=main"
+# Скрипт start.sh выполняет проверку venv, установку зависимостей и автообновление
+ExecStartPre=/opt/pdr/start.sh --no-start
 ExecStart=/opt/pdr/venv/bin/gunicorn --config /opt/pdr/gunicorn.conf.py wsgi:app
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID
@@ -20,7 +24,7 @@ PrivateTmp=true
 NoNewPrivileges=true
 ProtectSystem=strict
 ProtectHome=true
-ReadWritePaths=/var/log/gunicorn /tmp
+ReadWritePaths=/var/log/gunicorn /tmp /var/log/pdr
 StandardOutput=journal
 StandardError=journal
 SyslogIdentifier=pdr-calc
