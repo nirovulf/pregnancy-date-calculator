@@ -232,3 +232,63 @@ details summary {
     50% { opacity: 0.5; }
     100% { opacity: 1; }
 }
+
+.recommendations-block {
+    background-color: #f0f8ff;
+    border: 1px solid #b3d9ff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.recommendation-item {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.recommendation-note {
+    margin-top: 12px;
+    padding: 8px;
+    background-color: #fffacd;
+    border-left: 3px solid #f0e68c;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.doctor-visits-block {
+    margin-top: 10px;
+}
+
+.visit-frequency {
+    font-weight: bold;
+    color: #1b5e20;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.visits-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.visits-table th, .visits-table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #c8e6c9;
+}
+
+.visits-table th {
+    background-color: #e8f5e9;
+    font-weight: bold;
+}
+
+.visits-table tr:nth-child(even) {
+    background-color: #f5fff5;
+}
+
+.visits-table tr:hover {
+    background-color: #e8f5e9;
+}
