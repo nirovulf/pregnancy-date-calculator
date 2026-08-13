@@ -1,3 +1,48 @@
+```gitignore
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
+*.class
+*.exe
+*.dll
+*.so
+*.a
+*.out
+
+# Dependencies
+node_modules/
+venv/
+.venv/
+.env
+.env.local
+.env.*
+
+# Build and distribution
+dist/
+build/
+target/
+*.egg-info/
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# Logs and cache
+*.log
+.coverage
+coverage/
+htmlcov/
+.mypy_cache/
+.pytest_cache/
+.cargo/
+.gradle/
+
+# System files
 ```
 # Python
 __pycache__/
