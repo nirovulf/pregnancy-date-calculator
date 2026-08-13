@@ -294,7 +294,7 @@ details summary {
 }
 
 .action-btn {
-    background-color: #2196F3;
+    background-color: #388e3c;
     width: auto;
     display: inline-block;
     margin-right: 10px;
@@ -304,7 +304,7 @@ details summary {
 }
 
 .action-btn:hover {
-    background-color: #1976D2;
+    background-color: #2e7d32;
 }
 
 .btn-icon {
@@ -322,18 +322,18 @@ details summary {
         padding: 0;
         margin: 0;
         font-family: "Times New Roman", Times, serif;
-        font-size: 12pt;
-        line-height: 1.4;
+        font-size: 11pt;
+        line-height: 1.3;
         color: #000;
     }
     
     h1 {
         color: #000;
-        font-size: 16pt;
+        font-size: 14pt;
         text-align: center;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         border-bottom: 2px solid #000;
-        padding-bottom: 8px;
+        padding-bottom: 6px;
     }
     
     .calculator {
@@ -358,33 +358,33 @@ details summary {
     
     .print-header {
         display: block !important;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         page-break-after: avoid;
     }
     
     .print-header h2 {
         color: #000;
         font-size: 14pt;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
         font-weight: bold;
     }
     
     .print-header p {
-        font-size: 10pt;
+        font-size: 9pt;
         color: #333;
         margin: 0;
     }
     
     /* Compact rows for main info */
     .compact-row {
-        margin-bottom: 6px;
+        margin-bottom: 4px;
         page-break-inside: avoid;
     }
     
     .compact-label {
         font-weight: normal;
         color: #000;
-        font-size: 12pt;
+        font-size: 11pt;
     }
     
     .highlight {
@@ -394,10 +394,10 @@ details summary {
     
     details {
         page-break-inside: avoid;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 6px;
+        margin-bottom: 6px;
         border: 1px solid #000;
-        padding: 8px;
+        padding: 5px;
     }
     
     details[open] summary ~ * {
@@ -406,15 +406,15 @@ details summary {
     
     details[open] {
         border: 1px solid #000;
-        padding: 8px;
-        margin-bottom: 10px;
+        padding: 5px;
+        margin-bottom: 6px;
     }
     
     details summary {
         font-weight: bold;
         color: #000;
         font-size: 12pt;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
     }
     
     /* Tables styling for print */
@@ -422,8 +422,8 @@ details summary {
         width: 100%;
         border-collapse: collapse;
         page-break-inside: auto;
-        margin-top: 8px;
-        margin-bottom: 8px;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
     
     tr {
@@ -432,14 +432,14 @@ details summary {
     }
     
     th, td {
-        padding: 6px 8px;
+        padding: 4px 6px;
         border: 1px solid #000;
-        font-size: 11pt;
+        font-size: 10pt;
         text-align: left;
     }
     
     th {
-        background-color: #f0f0f0 !important;
+        background-color: #e8e8e8 !important;
         font-weight: bold;
         color: #000;
         -webkit-print-color-adjust: exact;
@@ -447,21 +447,21 @@ details summary {
     }
     
     tr:nth-child(even) {
-        background-color: #fafafa !important;
+        background-color: #f5f5f5 !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
     
     /* Specific table adjustments */
     .tests-table, .hcg-table, .visits-table {
-        margin-top: 8px;
-        margin-bottom: 8px;
-        font-size: 10pt;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        font-size: 9pt;
     }
     
     .tests-table td, .hcg-table td, .hcg-table th,
     .visits-table td, .visits-table th {
-        padding: 5px 6px;
+        padding: 3px 5px;
         border: 1px solid #000;
     }
     
@@ -474,42 +474,42 @@ details summary {
     
     /* Info blocks */
     .hcg-info, .recommendations-block, .doctor-visits-block {
-        margin-top: 8px;
-        padding: 6px;
-        background-color: #f9f9f9 !important;
-        border: 1px solid #ccc;
+        margin-top: 5px;
+        padding: 4px;
+        background-color: #f5f5f5 !important;
+        border: 1px solid #bbb;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
     
     .hcg-note {
-        margin-top: 8px;
-        padding: 6px;
+        margin-top: 5px;
+        padding: 4px;
         background-color: #fffff0 !important;
-        border: 1px solid #ddd;
+        border: 1px solid #ccc;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
     
     .hcg-source {
-        margin-top: 6px;
+        margin-top: 4px;
         font-style: italic;
         text-align: right;
-        font-size: 9pt;
+        font-size: 8pt;
     }
     
     .recommendation-item {
-        margin: 4px 0;
-        font-size: 11pt;
+        margin: 3px 0;
+        font-size: 10pt;
         line-height: 1.3;
     }
     
     .recommendation-note {
-        margin-top: 8px;
-        padding: 5px;
+        margin-top: 5px;
+        padding: 4px;
         background-color: #fffff0 !important;
         border-left: 2px solid #000;
-        font-size: 10pt;
+        font-size: 9pt;
         font-style: italic;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -518,27 +518,27 @@ details summary {
     .visit-frequency {
         font-weight: bold;
         color: #000;
-        margin-bottom: 6px;
-        font-size: 11pt;
+        margin-bottom: 5px;
+        font-size: 10pt;
     }
     
     .hcg-info p {
-        margin: 3px 0;
-        font-size: 10pt;
+        margin: 2px 0;
+        font-size: 9pt;
     }
     
     /* Remove any extra margins */
     p, ul, ol {
-        margin: 4px 0;
+        margin: 3px 0;
     }
     
     ul {
         padding-left: 15px;
-        margin: 4px 0;
+        margin: 3px 0;
     }
     
     li {
         margin: 2px 0;
-        font-size: 10pt;
+        font-size: 9pt;
     }
 }
