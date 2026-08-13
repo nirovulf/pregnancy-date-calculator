@@ -18,9 +18,15 @@ keepalive = 2
 max_requests = 1000
 max_requests_jitter = 50
 
-# Logging
-accesslog = "/var/log/gunicorn/pdr-access.log"
-errorlog = "/var/log/gunicorn/pdr-error.log"
+# Logging - use current directory if /var/log/gunicorn doesn't exist
+import os
+log_dir = "/var/log/gunicorn"
+if not os.path.exists(log_dir):
+    log_dir = "./logs"
+    os.makedirs(log_dir, exist_ok=True)
+
+accesslog = os.path.join(log_dir, "pdr-access.log")
+errorlog = os.path.join(log_dir, "pdr-error.log")
 loglevel = "info"
 access_log_format = '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"'
 
