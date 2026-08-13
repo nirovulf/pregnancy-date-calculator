@@ -340,8 +340,6 @@ details summary {
         box-shadow: none;
         border: none;
         padding: 0;
-        margin: 0;
-        width: 100%;
     }
     
     form, .reset-btn, #actionButtons {
@@ -353,7 +351,6 @@ details summary {
         background-color: white;
         border: none;
         padding: 0;
-        margin: 0;
     }
     
     .print-header {
@@ -419,8 +416,6 @@ details summary {
     
     /* Tables styling for print */
     table {
-        width: 100%;
-        border-collapse: collapse;
         page-break-inside: auto;
         margin-top: 5px;
         margin-bottom: 5px;
