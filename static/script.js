@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultBlock = document.getElementById('resultBlock');
     const cycleLengthSelect = document.getElementById('cycle_length');
     const lastPeriodInput = document.getElementById('last_period');
+    const actionButtons = document.getElementById('actionButtons');
+    const printBtn = document.getElementById('printBtn');
+    const pdfBtn = document.getElementById('pdfBtn');
 
     // Populate cycle length options
     for (let i = 20; i <= 40; i++) {
@@ -35,6 +38,51 @@ document.addEventListener('DOMContentLoaded', function() {
         hideResults();
         hideError();
         resetBtn.style.display = 'none';
+        actionButtons.style.display = 'none';
+    });
+
+    // Print button handler
+    printBtn.addEventListener('click', function() {
+        // Open all details before printing
+        const detailsElements = resultBlock.querySelectorAll('details');
+        detailsElements.forEach(detail => {
+            detail.setAttribute('data-was-open', detail.open ? 'true' : 'false');
+            detail.open = true;
+        });
+        
+        setTimeout(() => {
+            window.print();
+            
+            // Restore original state after printing
+            setTimeout(() => {
+                detailsElements.forEach(detail => {
+                    const wasOpen = detail.getAttribute('data-was-open') === 'true';
+                    detail.open = wasOpen;
+                });
+            }, 500);
+        }, 100);
+    });
+
+    // PDF button handler
+    pdfBtn.addEventListener('click', function() {
+        // Open all details before printing (for PDF export)
+        const detailsElements = resultBlock.querySelectorAll('details');
+        detailsElements.forEach(detail => {
+            detail.setAttribute('data-was-open', detail.open ? 'true' : 'false');
+            detail.open = true;
+        });
+        
+        setTimeout(() => {
+            window.print();
+            
+            // Restore original state after printing
+            setTimeout(() => {
+                detailsElements.forEach(detail => {
+                    const wasOpen = detail.getAttribute('data-was-open') === 'true';
+                    detail.open = wasOpen;
+                });
+            }, 500);
+        }, 100);
     });
 
     // Real-time calculation on input change
@@ -108,6 +156,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function displayResults(data) {
         let html = '';
+
+        // Add header for print/PDF
+        html += `
+            <div class="print-header" style="display: none;">
+                <h2 style="color: #2e7d32; margin-bottom: 15px; font-size: 18px;">Результаты расчёта</h2>
+                <p style="font-size: 13px; color: #666; margin-bottom: 15px;">Дата расчёта: ${new Date().toLocaleDateString('ru-RU')}</p>
+            </div>
+        `;
 
         // Weight gain recommendation
         if (data.weightGainRange) {
@@ -307,5 +363,6 @@ document.addEventListener('DOMContentLoaded', function() {
         resultBlock.innerHTML = html;
         resultBlock.style.display = 'block';
         resultBlock.classList.add('fade-in');
+        actionButtons.style.display = 'block';
     }
 });

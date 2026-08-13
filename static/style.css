@@ -292,3 +292,87 @@ details summary {
 .visits-table tr:hover {
     background-color: #e8f5e9;
 }
+
+.action-btn {
+    background-color: #2196F3;
+    width: auto;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.action-btn:hover {
+    background-color: #1976D2;
+}
+
+.btn-icon {
+    margin-right: 5px;
+}
+
+#actionButtons {
+    text-align: center;
+}
+
+@media print {
+    body {
+        background-color: white;
+        max-width: none;
+        padding: 0;
+    }
+    
+    .calculator {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+    
+    form, .reset-btn, #actionButtons {
+        display: none !important;
+    }
+    
+    .result {
+        display: block !important;
+        background-color: white;
+        border: none;
+        padding: 0;
+    }
+    
+    .print-header {
+        display: block !important;
+        margin-bottom: 20px;
+    }
+    
+    details {
+        page-break-inside: avoid;
+    }
+    
+    details[open] summary ~ * {
+        display: block !important;
+    }
+    
+    details[open] {
+        border: 1px solid #c8e6c9;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    table {
+        page-break-inside: auto;
+    }
+    
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+    
+    h1 {
+        color: #2e7d32;
+        font-size: 20px;
+    }
+    
+    .highlight {
+        color: #1b5e20;
+    }
+}
