@@ -167,6 +167,78 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
 
+        // Nutrition recommendations
+        if (data.nutritionRecommendations) {
+            html += `
+                <details>
+                    <summary>${data.nutritionRecommendations.title}</summary>
+                    <div class="recommendations-block">
+            `;
+            
+            data.nutritionRecommendations.items.forEach(item => {
+                html += `<p class="recommendation-item">• ${item}</p>`;
+            });
+            
+            html += `
+                    </div>
+                </details>
+            `;
+        }
+
+        // Vitamin recommendations
+        if (data.vitaminRecommendations) {
+            html += `
+                <details>
+                    <summary>${data.vitaminRecommendations.title}</summary>
+                    <div class="recommendations-block">
+            `;
+            
+            data.vitaminRecommendations.items.forEach(item => {
+                html += `<p class="recommendation-item">• ${item}</p>`;
+            });
+            
+            if (data.vitaminRecommendations.note) {
+                html += `<p class="recommendation-note"><strong>Важно:</strong> ${data.vitaminRecommendations.note}</p>`;
+            }
+            
+            html += `
+                    </div>
+                </details>
+            `;
+        }
+
+        // Doctor visits schedule
+        if (data.doctorVisits) {
+            html += `
+                <details>
+                    <summary>${data.doctorVisits.title}</summary>
+                    <div class="doctor-visits-block">
+                        <p class="visit-frequency">${data.doctorVisits.frequency}</p>
+                        <table class="visits-table">
+                            <tr>
+                                <th>Срок</th>
+                                <th>Врач</th>
+                                <th>Цель визита</th>
+                            </tr>
+            `;
+            
+            data.doctorVisits.visits.forEach(visit => {
+                html += `
+                    <tr>
+                        <td>${visit.week}</td>
+                        <td>${visit.doctor}</td>
+                        <td>${visit.description}</td>
+                    </tr>
+                `;
+            });
+            
+            html += `
+                        </table>
+                    </div>
+                </details>
+            `;
+        }
+
         // Test dates
         if (data.testDates && data.testDates.length > 0) {
             html += `
